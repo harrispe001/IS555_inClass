@@ -5,13 +5,13 @@ starwars
 see_it <- starwars
 #filtering
 
-starwars_new <- starwars %>%
+starwars_new <- starwars |>
   filter(height > 100,
          sex == 'female') %>% 
   select(name, height, mass, species, films) %>% 
   # print(n=50)
-  # View()
-  arrange(desc(mass) ) %>% 
+  View()
+  arrange(-mass) %>% 
   # arrange(mass)
   mutate(
     weight_lbs = mass * 2.204
